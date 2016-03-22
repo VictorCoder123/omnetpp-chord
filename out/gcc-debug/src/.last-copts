@@ -1,0 +1,1 @@
+-DPREFER_QTENV -DWITH_OSG -DHAVE_PCAP -DXMLPARSER=libxml -DWITH_PARSIM -DWITH_NETBUILDER  -g -Wall   -I/Users/zhangqishen/omnetpp-5.0b3/tools/macosx/include -Wno-deprecated-register -fno-stack-protector  -DINET_IMPORT -I/Users/zhangqishen/Desktop/omnet/inet/src -I. -I/Users/zhangqishen/omnetpp-5.0b3/include
