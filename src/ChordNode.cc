@@ -407,9 +407,18 @@ inet::TCPSocket *ChordNode::connect (int fingerID)
     // Create a new socket and connect to it from local socket
     inet::L3Address addr = helper->lookup_node(fingerID);
     inet::TCPSocket *new_socket = new TCPSocket ();
+
+    // Delete existing socket
+    if (this->socket_)
+        delete this->socket_;
+
+    this->socket_ = new_socket;
+    this->socket_->setDataTransferMode (TCP_TRANSFER_OBJECT);
+    this->socket_->setOutputGate (gate ("tcpOut"));
+    this->socket_->setCallbackObject(this, NULL);
     this->socket_->connect(addr, this->localPort_);
 
-    return new_socket;
+    return this->socket_;
 }
 
 /** serve the incoming lookup request */

@@ -1,0 +1,4 @@
+# Partial OMNeT++/Tkenv config file -- see $HOME/.tkenvrc as well
+config default-configname	{ChordRing_LAN_wHub_M4_N5_C1}
+config default-runnumber	{0}
+
